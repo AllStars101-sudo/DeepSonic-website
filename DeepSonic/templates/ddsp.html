@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>DDSP | DeepSonic</title>
+  <link rel='stylesheet' href='https://cdn.rawgit.com/filipelinhares/ress/master/dist/ress.min.css'>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='deeplyrics.css') }}">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Page Wrap -->
+<div class="page-wrap">
+
+  <div id="home-slider">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide swiper-slide-one">
+          <div class="swiper-image" data-swiper-parallax-y="-20%">
+            <div class="swiper-image-inner swiper-image-left swiper-image-one">
+              <h1>Let's <span class="emphasis">Talk</span>,<br><span>Shall we?</span></h1>
+              <p>Customise your audio here.</p>
+            </div>
+          </div>
+          <div class="swiper-image" data-swiper-parallax-y="35%">
+            <div class="swiper-image-inner swiper-image-right swiper-image-two">
+              
+                
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+            <input type="file" id="myFile" name="filename">
+        </div>
+        <div class="input-field col s6">
+          <input id="threshold" type="number" class="validate">
+          <label for="threshold" style="color:white; font-size:15px;">Threshold (0-1)</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+            <label>
+                <input type="checkbox" class="filled-in" checked="checked" />
+                <span>Auto-adjust</span>
+              </label>
+        </div>
+</div>
+        <div class="row">
+        <div class="input-field col s12">
+            <label>
+                <input id="quiet" type="number" class="validate" max="60">
+                <span>Quietness (0-60)</span>
+              </label>
+        </div></div>
+        <div class="row">
+        <div class="input-field col s12">
+            <label>
+                <input id="autotune" type="number" class="validate" max="60">
+                <span>Autotune (0-1)</span>
+              </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+            <label>
+                <input id="pitch" type="number" class="validate">
+                <span>Pitch Shift (0-2)</span>
+              </label>
+        </div></div><div class="row">
+        <div class="input-field col s12">
+            <label>
+                <input id="loudness" type="number" class="validate">
+                <span>Loudness Shift (0-20)</span>
+              </label>
+        </div>
+      </div>
+      <div class="row">
+
+        <label style="color:white; font-size:15px;">Select your preferred model</label>
+        <select class="browser-default">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">Violin</option>
+          <option value="2">Flute</option>
+          <option value="3">Flute-2</option>
+          <option value="3">Trumpet</option>
+          <option value="3">Tenor Saxophone</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email" style="color:white; font-size:15px;">Email</label>
+        </div>
+      </div>
+
+  </div>
+        
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide swiper-slide-two">
+          <div class="swiper-image" data-swiper-parallax-y="-20%">
+            <div class="swiper-image-inner swiper-image-left swiper-image-three">
+              <h1>This is it.<br><span class="emphasis">You ready?</span></h1>
+              <p>Press submit to continue</p>
+            </div>
+          </div>
+          <div class="swiper-image" data-swiper-parallax-y="35%">
+            <div class="swiper-image-inner swiper-image-right swiper-image-four">
+              <p class="paragraph">
+                This will take a few minutes or hours. Please be patient.</p><br><br>
+                  <button class="btn waves-effect waves-light"><a href="ddspdone" style="color:white;">Submit
+                  <i class="material-icons right">send</i></a>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.jquery.min.js'></script><script  src="{{ url_for('static', filename='deeplyrics.js') }}"></script>
+
+</body>
+</html>
