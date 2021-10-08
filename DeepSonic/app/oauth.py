@@ -1,5 +1,5 @@
 # app/oauth.py
-
+'''
 import os
 
 from flask_login import current_user, login_user
@@ -67,3 +67,4 @@ def google_logged_in(blueprint, token):
             db.session.add(user)
             db.session.commit()
         login_user(user)
+'''

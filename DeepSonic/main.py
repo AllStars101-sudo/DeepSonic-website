@@ -1,10 +1,5 @@
 from flask import Flask, jsonify, redirect, render_template, url_for, flash, request
-from flask_login import logout_user, login_required
-from flask_dance.contrib.github import github
-from flask_dance.contrib.google import google
 import os
-from app.models import db, login_manager
-from app.oauth import github_blueprint, google_blueprint
 import logging
 from werkzeug.utils import secure_filename
 from flask import send_from_directory
@@ -25,14 +20,15 @@ UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif','docx','flac','wav','mp3'}
 
 app = Flask(__name__)
+'''
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///./users.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER'''
 app.secret_key = "supersecretkey"
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "supersekrit")
 app.config.from_mapping(config)
 cache = Cache(app)
-
+'''
 app.register_blueprint(google_blueprint, url_prefix="/login")
 app.register_blueprint(github_blueprint, url_prefix="/login")
 
@@ -41,7 +37,7 @@ login_manager.init_app(app)
 
 with app.app_context():
     db.create_all()
-
+'''
 
 @app.route("/ping")
 def ping():
@@ -82,7 +78,7 @@ def ddspdone():
 @app.route("/")
 def homepage():
     return render_template("home.html")
-
+'''
 @app.route("/login")
 def login():
     return render_template("login.html")
@@ -114,7 +110,7 @@ def login_google():
 def logout():
     logout_user()
     return redirect(url_for("homepage"))
-
+'''
 @app.errorhandler(500)
 def server_error(e):
     logging.exception('An error occurred during a request.')
@@ -123,7 +119,7 @@ def server_error(e):
     See logs for full stacktrace.
     """.format(e), 500
 
- 
+'''
 @app.route('/upload', methods=['GET', 'POST'])
 @login_required
 def upload_file():
@@ -142,7 +138,7 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('download_file', name=filename))
-    return '''
+    return ''''''
 <!DOCTYPE html>
 <html lang="en">
 
@@ -459,4 +455,4 @@ VANTA.NET({
 if __name__ == '__main__':
     # This is used when running locally. Gunicorn is used to run the
     # application on Google App Engine. See entrypoint in app.yaml.
-    app.run(host='0.0.0.0', debug=False)
+    app.run(host='127.0.0.1', debug=True)
