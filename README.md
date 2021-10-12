@@ -2,6 +2,8 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+An alpha barebones version of the DeepSonic website. You can visit DeepSonic at deepsonic.ml or https://deepsonic.herokuapp.com
+
 DeepSonic is a fully open source Deep Learning music experiment that is capable of synthesizing, generating, remixing, modifying music, all using the power of AI. Thanks to powerful open-source libraries such as Magenta by Tensorflow/Google and Jukebox by OpenAI, we were able to create a multi-functional AI Audio Engineer. 
 
 Note: This notebook runs all code natively. No cloud service is required unless you do not have a dedicated Nvidia GPU.
